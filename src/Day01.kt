@@ -22,9 +22,9 @@ fun main() {
       ?: wordToDigit[digit]
       ?: throw Error("Could not map $digit to string")
 
-    val regex = wordToDigit.keys.joinToString("|").plus("|[1-9]").toRegex()
 
     fun findDigits(input: String): List<String> {
+      val regex = wordToDigit.keys.joinToString("|").plus("|[1-9]").toRegex()
       var startIndex = 0
       val foundDigits = mutableListOf<String>()
       while (true) {
